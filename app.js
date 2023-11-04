@@ -1,56 +1,29 @@
-const express = require('express')
-const app = express()
-const hbs = require('hbs')
-require ('dotenv').config();
-const port = process.env.PORT;
+const express = require('express');
+const path = require('path');
 
-app.set("view engine", "hbs");
+const app = express();
+const port = 8080;
 
-hbs.registerPartials(__dirname + "/views/partials");
+// Middleware para servir archivos estáticos (CSS, imágenes, etc.)
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(express.static("public"));
-
-app.get("/", (req, res) => {
-  res.render("index", {
-    titulo: "Rudy Galindo",
-  });
+// Rutas
+app.get('/', (req, res) => {
+  // Renderiza directamente el archivo HTML (home.hbs en tu caso)
+  res.sendFile(path.join(__dirname, 'views', 'home.html'));
 });
 
-app.get("/proyecto1css", (req, res) => {
-  res.render("proyecto1css", {
-    titulo: "Base de Datos Notas para un Colegio",
-  });
+app.get('/pastor_aleman', (req, res) => {
+  // Renderiza directamente el archivo HTML (pastor_aleman.hbs en tu caso)
+  res.sendFile(path.join(__dirname, 'views', 'pastor_aleman.html'));
 });
 
-app.get("/proyecto2css", (req, res) => {
-  res.render("proyecto2css", {
-    titulo: "Migración de Oracle",
-  });
-});
-app.get("/yargs", (req, res) => {
-  res.render("yargs", {
-    titulo: "Yargs",
-  });
-});
-app.get("/WebServer", (req, res) => {
-  res.render("WebServer", {
-    titulo: "Web Server",
-  });
+app.get('/chihuahua', (req, res) => {
+  // Renderiza directamente el archivo HTML (chihuahua.hbs en tu caso)
+  res.sendFile(path.join(__dirname, 'views', 'chihuahua.html'));
 });
 
-app.get("/proyecto1css", (req, res) => {
-  res.sendFile(__dirname + "/public/proyecto1css");
-});
-app.get("/SistemaSolar", (req, res) => {
-  res.sendFile(__dirname + "/public/proyecto2css");
-});
-app.get("/Sysinfo", (req, res) => {
-  res.sendFile(__dirname + "/public/yargs");
-});
-app.get("/Compilador", (req, res) => {
-  res.sendFile(__dirname + "/public/WebServer");
-});
-
+// Iniciar el servidor
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`Servidor en ejecución en http://localhost:${port}`);
 });
