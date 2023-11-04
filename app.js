@@ -5,6 +5,10 @@ const hbs = require("hbs");
 const app = express();
 const port = process.env.PORT;
 
+app.set("view engine", "hbs");
+
+hbs.registerPartials(__dirname+("/views/partials"))
+
 // Middleware para servir archivos estáticos (CSS, imágenes, etc.)
 app.use(express.static(path.join(__dirname, 'public')));
 
