@@ -16,14 +16,14 @@ app.get('/', (req, res) => {
 })
 
 app.get('/pastor_aleman', (req, res) => {
-  res.render('home', {
+  res.render('pastor_aleman', {
       nombre: 'Rudy Galindo',
       titulo: 'Curso de Node'
   });
 })
 
 app.get('/chihuahua', (req, res) => {
-  res.render('home', {
+  res.render('chihuahua', {
       nombre: 'Rudy Galindo',
       titulo: 'Curso de Node'
   });
