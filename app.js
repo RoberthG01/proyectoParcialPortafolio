@@ -9,19 +9,25 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Rutas
 app.get('/', (req, res) => {
-  // Renderiza directamente el archivo HTML (home.hbs en tu caso)
-  res.sendFile(path.join(__dirname, 'views', 'home.html'));
-});
+  res.render('home', {
+      nombre: 'Rudy Galindo',
+      titulo: 'Curso de Node'
+  });
+})
 
 app.get('/pastor_aleman', (req, res) => {
-  // Renderiza directamente el archivo HTML (pastor_aleman.hbs en tu caso)
-  res.sendFile(path.join(__dirname, 'views', 'pastor_aleman.html'));
-});
+  res.render('home', {
+      nombre: 'Rudy Galindo',
+      titulo: 'Curso de Node'
+  });
+})
 
 app.get('/chihuahua', (req, res) => {
-  // Renderiza directamente el archivo HTML (chihuahua.hbs en tu caso)
-  res.sendFile(path.join(__dirname, 'views', 'chihuahua.html'));
-});
+  res.render('home', {
+      nombre: 'Rudy Galindo',
+      titulo: 'Curso de Node'
+  });
+})
 
 // Iniciar el servidor
 app.listen(port, () => {
