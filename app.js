@@ -9,24 +9,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Rutas
 app.get('/', (req, res) => {
-  res.render('home', {
-      nombre: 'Rudy Galindo',
-      titulo: 'Curso de Node'
-  });
+  res.render('home');
 })
 
 app.get('/pastor_aleman', (req, res) => {
-  res.render('pastor_aleman', {
-      nombre: 'Rudy Galindo',
-      titulo: 'Curso de Node'
-  });
+  res.render('pastor_aleman');
 })
 
 app.get('/chihuahua', (req, res) => {
-  res.render('chihuahua', {
-      nombre: 'Rudy Galindo',
-      titulo: 'Curso de Node'
-  });
+  res.render('chihuahua');
 })
 
 // Iniciar el servidor
