@@ -1,0 +1,70 @@
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+header img {
+  border-radius: 50%;
+}
+
+h1, h2 {
+  margin: 5px 0;
+}
+
+main {
+  margin: 20px;
+}
+
+/* Estilos para la sección de descripción del proyecto */
+#description {
+  margin-bottom: 30px;
+}
+
+#description h3 {
+  color: #333;
+}
+
+#description p {
+  line-height: 1.5;
+}
+
+/* Estilos para la sección de fotos */
+#fotos p {
+  margin-top: 20px;
+}
+
+#fotos img {
+  margin-bottom: 10px;
+}
+
+/* Estilos para los enlaces y botones */
+a {
+  text-decoration: none;
+}
+
+input[type="submit"] {
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Estilos para el enlace al proyecto en GitHub */
+#fotos a {
+  display: block;
+  text-align: center;
+}
