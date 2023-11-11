@@ -1,6 +1,5 @@
 const express = require('express');
-const path = require('path');
-require('dotenv').config(); // Cargar variables de entorno desde .env
+require('dotenv').config();
 const hbs = require('hbs');
 
 const app = express();
@@ -9,14 +8,13 @@ const port = process.env.PORT;
 // Configurar el motor de plantillas Handlebars
 app.set('view engine', 'hbs');
 
-// Establecer la carpeta de vistas
-app.set('views', path.join(__dirname, 'views'));
+hbs.registerPartials(__dirname + 'partials');
 
-// Configurar el directorio de parciales
-hbs.registerPartials(path.join(__dirname, 'views', 'partials'));
+// Establecer la carpeta de vistas (ruta directa)
+app.set('views', __dirname + '/views');
 
 // Configurar el manejo de archivos estáticos
-app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use('/public', express.static(__dirname + '/public'));
 
 // Rutas
 app.get('/', (req, res) => {
