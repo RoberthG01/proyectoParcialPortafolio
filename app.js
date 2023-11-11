@@ -1,4 +1,43 @@
+require('dotenv').config();
 const express = require('express');
+const path = require('path');
+const hbs = require("hbs");
+
+const app = express();
+const port = process.env.PORT;
+console.log(process.env.PORT);
+
+app.set("view engine", "hbs");
+
+hbs.registerPartials(__dirname+("/views/partials"))
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', (req, res) => {
+  res.render('home');
+})
+
+app.get('/proyecto1css', (req, res) => {
+  res.render('proyecto1css')
+})
+
+app.get('/proyecto2css', (req, res) => {
+  res.render('proyecto2css')
+})
+
+app.get('/proyecto3css', (req, res) => {
+  res.render('proyecto3css')
+})
+
+app.get('/proyecto4css', (req, res) => {
+  res.render('proyecto4css')
+})
+
+app.listen(port, () => {
+  console.log(`Servidor de ejecución en http://localhost:${port}`);
+});
+
+/*const express = require('express');
 require('dotenv').config();
 const hbs = require('hbs');
 
@@ -41,3 +80,4 @@ app.get('/proyecto4', (req, res) => {
 app.listen(port, () => {
   console.log(`Servidor en ejecución en http://localhost:${port}`);
 });
+*/
