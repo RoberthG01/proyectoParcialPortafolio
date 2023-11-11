@@ -5,21 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Mi Portafolio UMG</title>
-    <link rel="stylesheet" href="./normalize.css">
-    <link rel="stylesheet" href="./estiloportafolio.css">
+    <link rel="stylesheet" href="/public/CSS/normalize.css">
+    <link rel="stylesheet" href="/public/CSS/estiloportafolio.css">
 </head>
 <body>
-    <header>
-        <img src="./imagenesversiondos/fotoperfil.jpg" alt="Foto de Perfil" width="250" height="350">
-        <h1>Rudy Roberto Méndez Galindo</h1>
-        <h2>Bachiller en Ciencias y Letras con Diplomado en Inglés</h2>
-        <h2>Ingeniería en Sistemas de Información y Ciencias de la Computación</h2>
-        <p>
-            <img src="./imagenesversiondos/contacto.png" alt="contacto" width="30" height="20">
-            <b>Información de Contacto:</b>
-            rmendezg13@miumg.edu.gt
-        </p>
-    </header>
+    {{>partials/header}}
     <main>
         <section id="about">
             <h2>Acerca de Mí:</h2>
@@ -80,28 +70,28 @@
                 <h3>
                     Proyecto 1: Base de Datos de Notas para un Colegio.
                 </h3>
-                <a href="proyecto1css.html">Proyecto No. 1</a>
+                <a href="proyecto1css.hbs">Proyecto No. 1</a>
             </div>
             <div class="project">
                 <h3>
                     Proyecto 2: Migración de Arquitectura Oracle 6i a plataforma Oracle Apex 20.2 para el análisis y la toma
                     de decisiones en la Producción de Caña de Azúcar en Ingenio Madre Tierra.
                 </h3>
-                <a href="proyecto2css.html">Proyecto No. 2</a>
+                <a href="proyecto2css.hbs">Proyecto No. 2</a>
             </div>
 
             <div class="project">
                 <h3>
                     Proyecto 3: Conexión de Mongo db al portafolio.
                 </h3>
-                <a href="proyecto3css.html">Proyecto No. 3</a>
+                <a href="proyecto3css.hbs">Proyecto No. 3</a>
             </div>
 
             <div class="project">
                 <h3>
                     Proyecto 4: Sistema de pedidos de una heladería.
                 </h3>
-                <a href="proyecto4css.html">Proyecto No. 4</a>
+                <a href="proyecto4css.hbs">Proyecto No. 4</a>
             </div>
 
         </section>
@@ -143,8 +133,6 @@
             </ol>
         </section>
     </main>
-    <footer>
-        <p> Derechos Reservados &copy; Año: 2023</p>
-    </footer>
+    {{>partials/footer}}
 </body>
 </html>
